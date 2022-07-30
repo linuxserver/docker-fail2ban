@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+mkdir -p \
+    /config/log/fail2ban \
+    /config/fail2ban/{action.d,filter.d,jail.d}
+
+# copy/update the fail2ban configs from /etc and then /defaults to /config
+cp -R /etc/fail2ban /config
+cp -R /defaults/fail2ban /config
+
+# permissions
+chown -R abc:abc \
+    /config
