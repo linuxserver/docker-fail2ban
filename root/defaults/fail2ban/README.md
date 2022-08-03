@@ -17,7 +17,7 @@ You can enable any of the pre-made jails by reviewing `jail.conf` and the files 
 
 This example shows how to enable jails for sshd on the host, and SWAG running in a container. It also includes some general recommendations and optional lines commented out.
 
-The default `jail.conf` is configured to ban using the `INPUT` chain. In order for bans to work consistently for applications running in containers, the `DOCKER-USER` chain should be used. Some configurations included in this container come pre-configured to use the `DOCKER-USER` chain.
+The default `jail.conf` will utilize the `INPUT` chain (as specified in `actions.d/iptables-common.conf`) to ban. In order for bans to work consistently for applications running in containers, the `DOCKER-USER` chain should be used in the relevant application section of the `jail.local` file. Some configurations included in `/config/fail2ban/jail.d/` come pre-configured to use the `DOCKER-USER` chain.
 
 In this basic example:
 
