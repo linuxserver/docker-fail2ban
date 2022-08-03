@@ -97,4 +97,4 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "01.08.22:", desc: "Initial Release." }
+  - { date: "03.08.22:", desc: "Initial Release." }
