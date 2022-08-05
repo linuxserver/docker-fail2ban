@@ -8,6 +8,47 @@ If you would like to customize anything, create a `*.local` file with the same n
 
 For example, to adjust `jail.conf`, create `jail.local` and apply your customizations there.
 
+## File Parsing Order
+
+Fail2ban will combine action configurations in the following order:
+
+```text
+action.d/*.conf (in alphabetical order)
+action.d/*.local (in alphabetical order)
+```
+
+Fail2ban will combine filter configurations in the following order:
+
+```text
+filter.d/*.conf (in alphabetical order)
+filter.d/*.local (in alphabetical order)
+```
+
+Fail2ban will combine jail configurations in the following order:
+
+```text
+jail.conf
+jail.d/*.conf (in alphabetical order)
+jail.local
+jail.d/*.local (in alphabetical order)
+```
+
+## Chains
+
+Chains affect how access is restricted. There are two primary ways to restrict access.
+
+### `DOCKER-USER`
+
+The `DOCKER-USER` chain is used to restrict access to applications running in Docker containers. This will restrict access to all containers, not just the one that the jail is configured for.
+
+### `INPUT`
+
+The `INPUT` chain is used to restrict access to applications running on the host. This will restrict access to the host network stack. The host network stack may not be inclusive of all Docker network stacks, thus the `DOCKER-USER` chain is used separately for applications running in Docker containers.
+
+### `FORWARD` (for older versions of Docker)
+
+The `FORWARD` chain may be used on systems running older versions of Docker where the `DOCKER-USER` chain is not available.
+
 ## `jail.local` Examples
 
 These are some examples of what you can do in your `jail.local`. There is no universally correct way to setup `jail.local` as it depends on your needs.

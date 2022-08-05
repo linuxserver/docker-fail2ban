@@ -78,22 +78,6 @@ Each log file should be mounted in a subfolder underneath `/remotelogs`, ex:
 - `/remotelogs/nginx/` would mount a folder containing the nginx logs to the container
 - `/remotelogs/unificontroller/server.log` would mount a single file for the unifi controller logs to the container
 
-### Chains
-
-Chains affect how access is restricted. There are two primary ways to restrict access.
-
-#### `DOCKER-USER`
-
-The `DOCKER-USER` chain is used to restrict access to applications running in Docker containers. This will restrict access to all containers, not just the one that the jail is configured for.
-
-#### `INPUT`
-
-The `INPUT` chain is used to restrict access to applications running on the host. This will restrict access to the host network stack. The host network stack may not be inclusive of all Docker network stacks, thus the `DOCKER-USER` chain is used separately for applications running in Docker containers.
-
-#### `FORWARD` (for older versions of Docker)
-
-The `FORWARD` chain may be used on systems running older versions of Docker where the `DOCKER-USER` chain is not available.
-
 ## Usage
 
 Here are some example snippets to help you get started creating a container.
