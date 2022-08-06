@@ -5,8 +5,7 @@ mkdir -p \
     /config/log/fail2ban \
     /config/fail2ban/{action.d,filter.d,jail.d}
 
-# copy/update the fail2ban configs from /etc and then /defaults to /config
-cp -R /etc/fail2ban /config
+# copy/update the fail2ban configs from /defaults to /config
 cp -R /defaults/fail2ban /config
 
 # permissions

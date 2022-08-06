@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bash
-# shellcheck shell=bash
-
-# Disable anything that ships enabled by default
-# Users can opt to enable what they want
-
-# Alpine ships sshd enabled by default
-# https://git.alpinelinux.org/aports/tree/main/fail2ban/alpine-ssh.jaild
-sed -i 's/enabled  = true/enabled  = false/' /etc/fail2ban/jail.d/alpine-ssh.conf

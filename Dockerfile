@@ -16,6 +16,31 @@ RUN \
     fail2ban \
     jq \
     nftables && \
+  echo "**** copy fail2ban confs to /defaults ****" && \
+  mkdir -p \
+    /tmp/fail2ban-confs \
+    /defaults/fail2ban/{action.d,filter.d,jail.d} && \
+  curl -o \
+    /tmp/fail2ban-confs.tar.gz -L \
+    "https://github.com/linuxserver/fail2ban-confs/tarball/master" && \
+  tar xf \
+    /tmp/fail2ban-confs.tar.gz -C \
+    /tmp/fail2ban-confs --strip-components=1 && \
+  cp \
+    /tmp/fail2ban-confs/README.md \
+    /defaults/fail2ban/ && \
+  cp \
+    /tmp/fail2ban-confs/*.conf \
+    /defaults/fail2ban/ && \
+  cp \
+    /tmp/fail2ban-confs/action.d/*.conf \
+    /defaults/fail2ban/action.d/ && \
+  cp \
+    /tmp/fail2ban-confs/filter.d/*.conf \
+    /defaults/fail2ban/filter.d/ && \
+  cp \
+    /tmp/fail2ban-confs/jail.d/*.conf \
+    /defaults/fail2ban/jail.d/ && \
   echo "**** cleanup ****" && \
   rm -rf \
       /root/.cache \
