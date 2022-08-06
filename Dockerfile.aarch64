@@ -19,7 +19,9 @@ RUN \
   echo "**** copy fail2ban confs to /defaults ****" && \
   mkdir -p \
     /tmp/fail2ban-confs \
-    /defaults/fail2ban/{action.d,filter.d,jail.d} && \
+    /defaults/fail2ban/action.d \
+    /defaults/fail2ban/filter.d \
+    /defaults/fail2ban/jail.d && \
   curl -o \
     /tmp/fail2ban-confs.tar.gz -L \
     "https://github.com/linuxserver/fail2ban-confs/tarball/master" && \
