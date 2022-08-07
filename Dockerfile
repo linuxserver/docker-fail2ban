@@ -24,7 +24,7 @@ RUN \
     "https://github.com/linuxserver/fail2ban-confs/tarball/master" && \
   tar xf \
     /tmp/fail2ban-confs.tar.gz -C \
-    /defaults/fail2ban/ --strip-components=1 --exclude=.editorconfig --exclude=.gitattributes --exclude=.github --exclude=.gitignore --exclude=LICENSE && \
+    /defaults/fail2ban/ --strip-components=1 --exclude=linux*/.editorconfig --exclude=linux*/.gitattributes --exclude=linux*/.github --exclude=linux*/.gitignore --exclude=linux*/LICENSE && \
   echo "**** cleanup ****" && \
   rm -rf \
       /root/.cache \
