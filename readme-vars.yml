@@ -70,7 +70,7 @@ app_setup_block: |
 
   On first run, the container will create a number of folders and files in `/config`. The default configurations for fail2ban are all disabled by default.
 
-  Please refer to the [Configuration README](https://github.com/linuxserver/docker-fail2ban/blob/master/root/defaults/fail2ban/README.md), which can be viewed in our repository, or in your config folder at `/config/fail2ban/README.md`.
+  Please refer to the [Configuration README](https://github.com/linuxserver/fail2ban-confs/blob/master/README.md), which can be viewed in our repository, or in your config folder at `/config/fail2ban/README.md`.
 
   ### Remote Logs
 
@@ -81,4 +81,4 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "03.08.22:", desc: "Initial Release." }
+  - { date: "07.08.22:", desc: "Initial Release." }

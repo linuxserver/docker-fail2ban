@@ -69,7 +69,7 @@ We recommend mounting each application's logs as a volume to the container (illu
 
 On first run, the container will create a number of folders and files in `/config`. The default configurations for fail2ban are all disabled by default.
 
-Please refer to the [Configuration README](https://github.com/linuxserver/docker-fail2ban/blob/master/root/defaults/fail2ban/README.md), which can be viewed in our repository, or in your config folder at `/config/fail2ban/README.md`.
+Please refer to the [Configuration README](https://github.com/linuxserver/fail2ban-confs/blob/master/README.md), which can be viewed in our repository, or in your config folder at `/config/fail2ban/README.md`.
 
 ### Remote Logs
 
@@ -302,4 +302,4 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **03.08.22:** - Initial Release.
+* **07.08.22:** - Initial Release.
