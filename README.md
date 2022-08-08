@@ -91,6 +91,10 @@ services:
   fail2ban:
     image: lscr.io/linuxserver/fail2ban:latest
     container_name: fail2ban
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: host
     environment:
       - PUID=1000
       - PGID=1000
@@ -128,6 +132,9 @@ services:
 ```bash
 docker run -d \
   --name=fail2ban \
+  --net=host \
+  --cap-add=NET_ADMIN \
+  --cap-add=NET_RAW \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=America/New_York \
@@ -165,6 +172,7 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
+| `--net=host` | Shares host networking with container. |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=America/New_York` | Specify a timezone to use EG America/New_York |
@@ -192,6 +200,10 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-v /remotelogs/unificontroller/server.log:ro` | Optional path to unificontroller server log file. Mounted as Read Only. |
 | `-v /remotelogs/vaultwarden/vaultwarden.log:ro` | Optional path to vaultwarden log file. Mounted as Read Only. |
 | `-v /remotelogs/vsftpd/vsftpd.log:ro` | Optional path to vsftpd log file. Mounted as Read Only. |
+
+### Portainer notice
+
+This image utilises `cap_add` or `sysctl` to work properly. This is not implemented properly in some versions of Portainer, thus this image may not work if deployed through Portainer.
 
 ## Environment variables from files (Docker secrets)
 

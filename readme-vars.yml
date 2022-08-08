@@ -18,6 +18,7 @@ available_architectures:
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
+param_usage_include_net: true
 param_net: "host"
 param_net_desc: "Shares host networking with container."
 param_usage_include_env: true
@@ -27,7 +28,7 @@ param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Contains all relevant configuration files." }
   - { vol_path: "/var/log:ro", vol_host_path: "/var/log", desc: "Host logs. Mounted as Read Only." }
-cap_add_param: false
+cap_add_param: true
 cap_add_param_vars:
   - { cap_add_var: "NET_ADMIN" }
   - { cap_add_var: "NET_RAW" }
