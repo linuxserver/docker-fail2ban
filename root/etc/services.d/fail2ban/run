@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+exec \
+    fail2ban-client -x -vv -f -c /config/fail2ban start

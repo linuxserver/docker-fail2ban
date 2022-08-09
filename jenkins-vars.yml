@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-fail2ban
+external_type: alpine_repo
+release_type: stable
+release_tag: latest
+ls_branch: main
+repo_vars:
+  - BUILD_VERSION_ARG = 'FAIL2BAN_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-fail2ban'
+  - CONTAINER_NAME = 'fail2ban'
+  - DOCKERHUB_IMAGE = 'linuxserver/fail2ban'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/fail2ban'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/fail2ban'
+  - DIST_IMAGE = 'alpine'
+  - DIST_TAG = '3.15'
+  - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.15/main/'
+  - DIST_REPO_PACKAGES = 'fail2ban'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='false'
+  - CI_PORT=''
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''

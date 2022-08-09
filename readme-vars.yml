@@ -1,0 +1,85 @@
+---
+
+# project information
+project_name: fail2ban
+project_url: "http://www.fail2ban.org/"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/fail2ban-logo.png"
+project_blurb: |
+  [{{ project_name|capitalize }}]({{ project_url }}) is a daemon to ban hosts that cause multiple authentication errors.
+
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
+
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_net: true
+param_net: "host"
+param_net_desc: "Shares host networking with container."
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "TZ", env_value: "America/New_York", desc: "Specify a timezone to use EG America/New_York"}
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Contains all relevant configuration files." }
+  - { vol_path: "/var/log:ro", vol_host_path: "/var/log", desc: "Host logs. Mounted as Read Only." }
+cap_add_param: true
+cap_add_param_vars:
+  - { cap_add_var: "NET_ADMIN" }
+  - { cap_add_var: "NET_RAW" }
+
+# optional parameters
+opt_param_usage_include_vols: true
+opt_param_volumes:
+  - { vol_path: "/remotelogs/airsonic/airsonic.log:ro", vol_host_path: "/path/to/airsonic/airsonic.log", desc: "Optional path to airsonic log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/apache2:ro", vol_host_path: "/path/to/apache2/log", desc: "Optional path to apache2 log folder. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/audit/audit.log:ro", vol_host_path: "/path/to/audit/audit.log", desc: "Optional path to auditd log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/authelia/authelia.log:ro", vol_host_path: "/path/to/authelia/authelia.log", desc: "Optional path to authelia log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/emby/embyserver.txt:ro", vol_host_path: "/path/to/emby/embyserver.txt", desc: "Optional path to emby log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/exim/mainlog:ro", vol_host_path: "/path/to/exim/mainlog", desc: "Optional path to exim log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/filebrowser/filebrowser.log:ro", vol_host_path: "/path/to/filebrowser/filebrowser.log", desc: "Optional path to filebrowser log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/gitea/gitea.log:ro", vol_host_path: "/path/to/gitea/gitea.log", desc: "Optional path to gitea log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/homeassistant/home-assistant.log:ro", vol_host_path: "/path/to/homeassistant/home-assistant.log", desc: "Optional path to homeassistant log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/lighttpd/error.log:ro", vol_host_path: "/path/to/lighttpd/error.log", desc: "Optional path to lighttpd error log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/nextcloud/nextcloud.log:ro", vol_host_path: "/path/to/nextcloud/nextcloud.log", desc: "Optional path to nextcloud log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/nginx:ro", vol_host_path: "/path/to/nginx/log", desc: "Optional path to nginx log folder. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/nzbget/nzbget.log:ro", vol_host_path: "/path/to/nzbget/nzbget.log", desc: "Optional path to nzbget log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/overseerr/overseerr.log:ro", vol_host_path: "/path/to/overseerr/overseerr.log", desc: "Optional path to overseerr log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/prowlarr/prowlarr.txt:ro", vol_host_path: "/path/to/prowlarr/prowlarr.txt", desc: "Optional path to prowlarr log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/radarr/radarr.txt:ro", vol_host_path: "/path/to/radarr/radarr.txt", desc: "Optional path to radarr log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/roundcube/errors:ro", vol_host_path: "/path/to/roundcube/errors", desc: "Optional path to roundcube error log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/sabnzbd/sabnzbd.log:ro", vol_host_path: "/path/to/sabnzbd/sabnzbd.log", desc: "Optional path to sabnzbd log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/sonarr/sonarr.txt:ro", vol_host_path: "/path/to/sonarr/sonarr.txt", desc: "Optional path to sonarr log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/unificontroller/server.log:ro", vol_host_path: "/path/to/unificontroller/server.log", desc: "Optional path to unificontroller server log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/vaultwarden/vaultwarden.log:ro", vol_host_path: "/path/to/vaultwarden/vaultwarden.log", desc: "Optional path to vaultwarden log file. Mounted as Read Only." }
+  - { vol_path: "/remotelogs/vsftpd/vsftpd.log:ro", vol_host_path: "/path/to/vsftpd/vsftpd.log", desc: "Optional path to vsftpd log file. Mounted as Read Only." }
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  This container is designed to allow fail2ban to function at the host level, as well as at the docker container level.
+  If you are running applications on the host, you will need to set the `chain` to `INPUT` in the jail for that application.
+  All jails require the ability to read the application log files.
+  We recommend mounting each application's logs as a volume to the container (illustrated by the optional volumes in our documentation).
+
+  ### Configuration Files
+
+  On first run, the container will create a number of folders and files in `/config`. The default configurations for fail2ban are all disabled by default.
+
+  Please refer to the [Configuration README](https://github.com/linuxserver/fail2ban-confs/blob/master/README.md), which can be viewed in our repository, or in your config folder at `/config/fail2ban/README.md`.
+
+  ### Remote Logs
+
+  The `/remotelogs` path is designed to act as a parent for all log files you would like fail2ban to be able to use.
+  Each log file should be mounted in a subfolder underneath `/remotelogs`, ex:
+  - `/remotelogs/nginx/` would mount a folder containing the nginx logs to the container
+  - `/remotelogs/unificontroller/server.log` would mount a single file for the unifi controller logs to the container
+
+# changelog
+changelogs:
+  - { date: "09.08.22:", desc: "Initial Release." }
