@@ -78,5 +78,6 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "15.12.22:", desc: "Rebase to Alpine 3.17, Add ssmtp and whois packages. Symlink config to allow live reloading."}
   - { date: "25.08.22:", desc: "Update README to clarify remote log information." }
   - { date: "09.08.22:", desc: "Initial Release." }

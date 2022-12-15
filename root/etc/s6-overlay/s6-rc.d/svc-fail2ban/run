@@ -2,4 +2,4 @@
 # shellcheck shell=bash
 
 exec \
-    fail2ban-client -x -vv -f -c /config/fail2ban start
+    fail2ban-client -x -vv -f start

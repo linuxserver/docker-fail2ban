@@ -8,6 +8,10 @@ mkdir -p \
 # copy/update the fail2ban configs from /defaults to /config
 cp -R /defaults/fail2ban /config
 
+# symlink fail2ban configs to /config
+rm -rf /etc/fail2ban
+ln -s /config/fail2ban /etc/fail2ban
+
 # permissions
-chown -R abc:abc \
+lsiown -R abc:abc \
     /config
