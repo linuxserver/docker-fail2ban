@@ -14,9 +14,7 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache --upgrade \
-    curl \
     fail2ban \
-    jq \
     nftables \
     ssmtp \
     whois && \
