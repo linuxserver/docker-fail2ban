@@ -52,8 +52,8 @@ nghttp2-libs            1.51.0-r0              apk
 oniguruma               6.9.8-r0               apk     
 popt                    1.19-r0                apk     
 procps                  3.3.17-r2              apk     
-python                  3.10.10                binary  
-python3                 3.10.10-r0             apk     
+python                  3.10.11                binary  
+python3                 3.10.11-r0             apk     
 readline                8.2.0-r0               apk     
 scanelf                 1.3.5-r1               apk     
 shadow                  4.13-r0                apk     
