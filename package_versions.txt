@@ -12,7 +12,7 @@ busybox-binsh           1.35.0-r29             apk
 ca-certificates         20220614-r4            apk     
 ca-certificates-bundle  20220614-r4            apk     
 coreutils               9.1-r0                 apk     
-curl                    7.88.1-r1              apk     
+curl                    8.0.1-r0               apk     
 fail2ban                1.0.2                  python  
 fail2ban                1.0.2-r0               apk     
 gdbm                    1.23-r0                apk     
@@ -26,8 +26,8 @@ libattr                 2.5.1-r2               apk
 libbsd                  0.11.7-r0              apk     
 libbz2                  1.0.8-r4               apk     
 libc-utils              0.7.2-r3               apk     
-libcrypto3              3.0.8-r3               apk     
-libcurl                 7.88.1-r1              apk     
+libcrypto3              3.0.8-r4               apk     
+libcurl                 8.0.1-r0               apk     
 libexpat                2.5.0-r0               apk     
 libffi                  3.4.4-r0               apk     
 libgcc                  12.2.1_git20220924-r4  apk     
@@ -37,7 +37,7 @@ libmd                   1.0.4-r0               apk
 libmnl                  1.0.5-r0               apk     
 libnftnl                1.2.4-r0               apk     
 libproc                 3.3.17-r2              apk     
-libssl3                 3.0.8-r3               apk     
+libssl3                 3.0.8-r4               apk     
 libstdc++               12.2.1_git20220924-r4  apk     
 linux-pam               1.5.2-r1               apk     
 logrotate               3.20.1-r3              apk     
