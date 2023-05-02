@@ -15,8 +15,8 @@ RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache --upgrade \
     fail2ban \
+    msmtp \
     nftables \
-    ssmtp \
     whois && \
   echo "**** copy fail2ban confs to /defaults ****" && \
   mkdir -p \
