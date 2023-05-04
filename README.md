@@ -301,6 +301,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **15.12.22:** - Replace unmaintained ssmtp with msmtp.
 * **15.12.22:** - Rebase to Alpine 3.17, Add ssmtp and whois packages. Symlink config to allow live reloading.
 * **25.08.22:** - Update README to clarify remote log information.
 * **09.08.22:** - Initial Release.
