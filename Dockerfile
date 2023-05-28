@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17
+FROM ghcr.io/linuxserver/baseimage-alpine:3.18
 
 # set version label
 ARG BUILD_DATE
@@ -13,7 +13,7 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 
 RUN \
   echo "**** install runtime packages ****" && \
-  apk add --no-cache --upgrade \
+  apk add --no-cache \
     fail2ban \
     msmtp \
     nftables \
@@ -29,8 +29,8 @@ RUN \
     /defaults/fail2ban/ --strip-components=1 --exclude=linux*/.editorconfig --exclude=linux*/.gitattributes --exclude=linux*/.github --exclude=linux*/.gitignore --exclude=linux*/LICENSE && \
   echo "**** cleanup ****" && \
   rm -rf \
-      /root/.cache \
-      /tmp/*
+    /tmp/* \
+    $HOME/.cache
 
 # add local files
 COPY root/ /
