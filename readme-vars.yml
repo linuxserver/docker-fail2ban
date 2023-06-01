@@ -22,7 +22,7 @@ param_net: "host"
 param_net_desc: "Shares host networking with container."
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "TZ", env_value: "America/New_York", desc: "Specify a timezone to use EG America/New_York"}
+  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London.", name: "Timezone" }
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Contains all relevant configuration files." }
@@ -33,6 +33,9 @@ cap_add_param_vars:
   - { cap_add_var: "NET_RAW" }
 
 # optional parameters
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "VERBOSITY", env_value: "-vv", desc: "Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable.", name: "Verbosity", env_options: ["", "-v", "-vv", "-vvv", "-vvvv"] }
 opt_param_usage_include_vols: true
 opt_param_volumes:
   - { vol_path: "/remotelogs/airsonic:ro", vol_host_path: "/path/to/airsonic/log", desc: "Optional path to airsonic log folder. Mounted as Read Only." }
@@ -77,6 +80,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "01.06.23:", desc: "Add optional VERBOSITY environment variable, allowing users to set the container log verbosity." }
   - { date: "25.05.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
   - { date: "15.12.22:", desc: "Replace unmaintained ssmtp with msmtp."}
   - { date: "15.12.22:", desc: "Rebase to Alpine 3.17, Add ssmtp and whois packages. Symlink config to allow live reloading."}
