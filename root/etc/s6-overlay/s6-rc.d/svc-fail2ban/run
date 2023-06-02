@@ -1,5 +1,14 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+case VERBOSITY in
+-v | -vv | -vvv | -vvvv)
+    FAIL2BAN_VERBOSITY="${VERBOSITY:-}"
+    ;;
+*)
+    FAIL2BAN_VERBOSITY=""
+    ;;
+esac
+
 exec \
-    fail2ban-client -x -vv -f start
+    fail2ban-client -x "${FAIL2BAN_VERBOSITY}" -f start
