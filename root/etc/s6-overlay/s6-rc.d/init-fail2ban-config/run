@@ -13,5 +13,10 @@ rm -rf /etc/fail2ban
 ln -s /config/fail2ban /etc/fail2ban
 
 # permissions
+chmod -R 644 /etc/logrotate.d
+if [[ -f "/config/log/logrotate.status" ]]; then
+    chmod 600 /config/log/logrotate.status
+fi
+
 lsiown -R abc:abc \
     /config
