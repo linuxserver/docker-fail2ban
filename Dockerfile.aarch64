@@ -15,6 +15,7 @@ RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
     fail2ban \
+    logrotate \
     msmtp \
     nftables \
     whois && \
@@ -27,6 +28,11 @@ RUN \
   tar xf \
     /tmp/fail2ban-confs.tar.gz -C \
     /defaults/fail2ban/ --strip-components=1 --exclude=linux*/.editorconfig --exclude=linux*/.gitattributes --exclude=linux*/.github --exclude=linux*/.gitignore --exclude=linux*/LICENSE && \
+  echo "**** fix logrotate ****" && \
+  sed -i "s#/var/log/messages {}.*# #g" \
+    /etc/logrotate.conf && \
+  sed -i 's#/usr/sbin/logrotate /etc/logrotate.conf#/usr/sbin/logrotate /etc/logrotate.conf -s /config/log/logrotate.status#g' \
+    /etc/periodic/daily/logrotate && \
   echo "**** cleanup ****" && \
   rm -rf \
     /tmp/* \
