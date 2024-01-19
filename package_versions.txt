@@ -17,7 +17,7 @@ fail2ban                1.0.2-r2                apk
 fail2ban-pyc            1.0.2-r2                apk     
 gdbm                    1.23-r1                 apk     
 gmp                     6.2.1-r3                apk     
-gnutls                  3.8.0-r2                apk     
+gnutls                  3.8.3-r0                apk     
 ip6tables               1.8.9-r2                apk     
 iptables                1.8.9-r2                apk     
 jansson                 2.14-r3                 apk     
@@ -27,7 +27,7 @@ libattr                 2.5.1-r4                apk
 libbsd                  0.11.7-r1               apk     
 libbz2                  1.0.8-r5                apk     
 libc-utils              0.7.2-r5                apk     
-libcrypto3              3.1.4-r1                apk     
+libcrypto3              3.1.4-r3                apk     
 libcurl                 8.5.0-r0                apk     
 libexpat                2.5.0-r1                apk     
 libffi                  3.4.4-r2                apk     
@@ -40,7 +40,7 @@ libncursesw             6.4_p20230506-r0        apk
 libnftnl                1.2.5-r1                apk     
 libpanelw               6.4_p20230506-r0        apk     
 libproc2                4.0.4-r0                apk     
-libssl3                 3.1.4-r1                apk     
+libssl3                 3.1.4-r3                apk     
 libstdc++               12.2.1_git20220924-r10  apk     
 libtasn1                4.19.0-r1               apk     
 libunistring            1.1-r1                  apk     
@@ -67,7 +67,7 @@ readline                8.2.1-r1                apk
 scanelf                 1.3.7-r1                apk     
 shadow                  4.13-r4                 apk     
 skalibs                 2.13.1.1-r1             apk     
-sqlite-libs             3.41.2-r2               apk     
+sqlite-libs             3.41.2-r3               apk     
 ssl_client              1.36.1-r5               apk     
 tzdata                  2023d-r0                apk     
 utmps-libs              0.1.2.1-r1              apk     
