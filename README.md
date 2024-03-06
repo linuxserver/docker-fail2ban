@@ -100,7 +100,7 @@ services:
       - TZ=Etc/UTC
       - VERBOSITY=-vv #optional
     volumes:
-      - /path/to/appdata/config:/config
+      - /path/to/fail2ban/config:/config
       - /var/log:/var/log:ro
       - /path/to/airsonic/log:/remotelogs/airsonic:ro #optional
       - /path/to/apache2/log:/remotelogs/apache2:ro #optional
@@ -134,7 +134,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
   -e VERBOSITY=-vv `#optional` \
-  -v /path/to/appdata/config:/config \
+  -v /path/to/fail2ban/config:/config \
   -v /var/log:/var/log:ro \
   -v /path/to/airsonic/log:/remotelogs/airsonic:ro `#optional` \
   -v /path/to/apache2/log:/remotelogs/apache2:ro `#optional` \
@@ -168,7 +168,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-e VERBOSITY=-vv` | Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable. |
-| `-v /config` | Contains all relevant configuration files. |
+| `-v /config` | Persistent config files |
 | `-v /var/log:ro` | Host logs. Mounted as Read Only. |
 | `-v /remotelogs/airsonic:ro` | Optional path to airsonic log folder. Mounted as Read Only. |
 | `-v /remotelogs/apache2:ro` | Optional path to apache2 log folder. Mounted as Read Only. |
@@ -353,6 +353,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.12.23:** - Rebase to Alpine 3.19.
 * **01.06.23:** - Add optional VERBOSITY environment variable, allowing users to set the container log verbosity.
 * **25.05.23:** - Rebase to Alpine 3.18, deprecate armhf.
 * **15.12.22:** - Replace unmaintained ssmtp with msmtp.
