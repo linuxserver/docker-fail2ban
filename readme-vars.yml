@@ -80,7 +80,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "23.12.23:", desc: "Rebase to Alpine 3.19." }
+  - { date: "05.03.24:", desc: "Rebase to Alpine 3.19." }
   - { date: "01.06.23:", desc: "Add optional VERBOSITY environment variable, allowing users to set the container log verbosity." }
   - { date: "25.05.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
   - { date: "15.12.22:", desc: "Replace unmaintained ssmtp with msmtp."}
