@@ -28,14 +28,14 @@ jansson                 2.14-r4                apk
 jq                      1.7.1-r0               apk       
 keyutils-libs           1.6.3-r3               apk       
 krb5-conf               1.0-r2                 apk       
-krb5-libs               1.21.2-r0              apk       
+krb5-libs               1.21.3-r0              apk       
 libacl                  2.3.1-r4               apk       
 libattr                 2.5.1-r5               apk       
 libbsd                  0.11.7-r3              apk       
 libbz2                  1.0.8-r6               apk       
 libc-utils              0.7.2-r5               apk       
 libcom_err              1.47.0-r5              apk       
-libcrypto3              3.1.5-r0               apk       
+libcrypto3              3.1.6-r0               apk       
 libcurl                 8.5.0-r0               apk       
 libexpat                2.6.2-r0               apk       
 libffi                  3.4.4-r3               apk       
@@ -52,7 +52,7 @@ libncursesw             6.4_p20231125-r0       apk
 libnftnl                1.2.6-r0               apk       
 libpanelw               6.4_p20231125-r0       apk       
 libproc2                4.0.4-r0               apk       
-libssl3                 3.1.5-r0               apk       
+libssl3                 3.1.6-r0               apk       
 libstdc++               13.2.1_git20231014-r0  apk       
 libunistring            1.1-r2                 apk       
 libverto                0.3.2-r2               apk       
