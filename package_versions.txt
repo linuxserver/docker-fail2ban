@@ -2,7 +2,7 @@ NAME                    VERSION                TYPE
 alpine-baselayout       3.4.3-r2               apk       
 alpine-baselayout-data  3.4.3-r2               apk       
 alpine-keys             2.4-r1                 apk       
-alpine-release          3.19.2-r0              apk       
+alpine-release          3.19.3-r0              apk       
 apk-tools               2.14.4-r0              apk       
 bash                    5.2.21-r0              apk       
 brotli-libs             1.1.0-r1               apk       
@@ -16,7 +16,7 @@ coreutils               9.4-r2                 apk
 coreutils-env           9.4-r2                 apk       
 coreutils-fmt           9.4-r2                 apk       
 coreutils-sha512sum     9.4-r2                 apk       
-curl                    8.5.0-r0               apk       
+curl                    8.9.0-r0               apk       
 fail2ban                1.0.2                  python    
 fail2ban                1.0.2-r3               apk       
 fail2ban-pyc            1.0.2-r3               apk       
@@ -36,7 +36,7 @@ libbz2                  1.0.8-r6               apk
 libc-utils              0.7.2-r5               apk       
 libcom_err              1.47.0-r5              apk       
 libcrypto3              3.1.6-r2               apk       
-libcurl                 8.5.0-r0               apk       
+libcurl                 8.9.0-r0               apk       
 libexpat                2.6.2-r0               apk       
 libffi                  3.4.4-r3               apk       
 libgcc                  13.2.1_git20231014-r0  apk       
