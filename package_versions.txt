@@ -70,10 +70,10 @@ nghttp2-libs            1.58.0-r0              apk
 oniguruma               6.9.9-r0               apk       
 popt                    1.19-r3                apk       
 procps-ng               4.0.4-r0               apk       
-pyc                     3.11.9-r0              apk       
-python3                 3.11.9-r0              apk       
-python3-pyc             3.11.9-r0              apk       
-python3-pycache-pyc0    3.11.9-r0              apk       
+pyc                     3.11.9-r1              apk       
+python3                 3.11.9-r1              apk       
+python3-pyc             3.11.9-r1              apk       
+python3-pycache-pyc0    3.11.9-r1              apk       
 readline                8.2.1-r2               apk       
 scanelf                 1.3.7-r2               apk       
 shadow                  4.14.2-r0              apk       
