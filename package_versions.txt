@@ -37,7 +37,7 @@ libc-utils              0.7.2-r5               apk
 libcom_err              1.47.0-r5              apk       
 libcrypto3              3.1.6-r2               apk       
 libcurl                 8.9.0-r0               apk       
-libexpat                2.6.2-r0               apk       
+libexpat                2.6.3-r0               apk       
 libffi                  3.4.4-r3               apk       
 libgcc                  13.2.1_git20231014-r0  apk       
 libgcrypt               1.10.3-r0              apk       
