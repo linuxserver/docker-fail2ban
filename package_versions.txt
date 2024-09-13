@@ -2,7 +2,7 @@ NAME                    VERSION                TYPE
 alpine-baselayout       3.4.3-r2               apk       
 alpine-baselayout-data  3.4.3-r2               apk       
 alpine-keys             2.4-r1                 apk       
-alpine-release          3.19.3-r0              apk       
+alpine-release          3.19.4-r0              apk       
 apk-tools               2.14.4-r0              apk       
 bash                    5.2.21-r0              apk       
 brotli-libs             1.1.0-r1               apk       
@@ -35,7 +35,7 @@ libbsd                  0.11.7-r3              apk
 libbz2                  1.0.8-r6               apk       
 libc-utils              0.7.2-r5               apk       
 libcom_err              1.47.0-r5              apk       
-libcrypto3              3.1.6-r2               apk       
+libcrypto3              3.1.7-r0               apk       
 libcurl                 8.9.0-r0               apk       
 libexpat                2.6.3-r0               apk       
 libffi                  3.4.4-r3               apk       
@@ -52,7 +52,7 @@ libncursesw             6.4_p20231125-r0       apk
 libnftnl                1.2.6-r0               apk       
 libpanelw               6.4_p20231125-r0       apk       
 libproc2                4.0.4-r0               apk       
-libssl3                 3.1.6-r2               apk       
+libssl3                 3.1.7-r0               apk       
 libstdc++               13.2.1_git20231014-r0  apk       
 libunistring            1.1-r2                 apk       
 libverto                0.3.2-r2               apk       
@@ -70,10 +70,10 @@ nghttp2-libs            1.58.0-r0              apk
 oniguruma               6.9.9-r0               apk       
 popt                    1.19-r3                apk       
 procps-ng               4.0.4-r0               apk       
-pyc                     3.11.9-r1              apk       
-python3                 3.11.9-r1              apk       
-python3-pyc             3.11.9-r1              apk       
-python3-pycache-pyc0    3.11.9-r1              apk       
+pyc                     3.11.10-r0             apk       
+python3                 3.11.10-r0             apk       
+python3-pyc             3.11.10-r0             apk       
+python3-pycache-pyc0    3.11.10-r0             apk       
 readline                8.2.1-r2               apk       
 scanelf                 1.3.7-r2               apk       
 shadow                  4.14.2-r0              apk       
