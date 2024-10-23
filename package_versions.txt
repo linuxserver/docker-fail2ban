@@ -24,6 +24,7 @@ findutils               4.9.0-r5               apk
 gdbm                    1.23-r1                apk       
 gmp                     6.3.0-r1               apk       
 iptables                1.8.10-r3              apk       
+iptables-legacy         1.8.10-r3              apk       
 jansson                 2.14-r4                apk       
 jq                      1.7.1-r0               apk       
 keyutils-libs           1.6.3-r3               apk       
@@ -45,6 +46,8 @@ libgsasl                2.2.1-r0               apk
 libidn                  1.42-r0                apk       
 libidn2                 2.3.7-r0               apk       
 libintl                 0.22.5-r0              apk       
+libip4tc                1.8.10-r3              apk       
+libip6tc                1.8.10-r3              apk       
 libmd                   1.1.0-r0               apk       
 libmnl                  1.0.5-r2               apk       
 libncursesw             6.4_p20240420-r1       apk       
