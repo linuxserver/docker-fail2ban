@@ -15,6 +15,7 @@ RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
     fail2ban \
+    iptables-legacy \
     logrotate \
     msmtp \
     nftables \
