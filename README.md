@@ -78,10 +78,12 @@ The `/remotelogs` path is designed to act as a parent for all log files you woul
 Each log file should be mounted in a subfolder underneath `/remotelogs`, ex:
 - `/remotelogs/nginx/` would mount a folder containing the nginx logs to the container
 
- 
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
+
+>[!NOTE]
+>Unless a parameter is flaged as 'optional', it is *mandatory* and a value must be provided.
 
 ### docker-compose (recommended, [click here for more info](https://docs.linuxserver.io/general/docker-compose))
 
@@ -188,6 +190,8 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-v /remotelogs/sonarr:ro` | Optional path to sonarr log folder. Mounted as Read Only. |
 | `-v /remotelogs/unificontroller:ro` | Optional path to unificontroller log folder. Mounted as Read Only. |
 | `-v /remotelogs/vaultwarden:ro` | Optional path to vaultwarden log folder. Mounted as Read Only. |
+| `--cap-add=NET_ADMIN` | Required for fail2ban to be able to modify iptables rules. |
+| `--cap-add=NET_RAW` | Required for fail2ban to be able to bind to any interface & use RAW sockets. |
 
 ### Portainer notice
 
