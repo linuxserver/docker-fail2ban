@@ -6,14 +6,11 @@ project_url: "http://www.fail2ban.org/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/fail2ban-logo.png"
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) is a daemon to ban hosts that cause multiple authentication errors.
-
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -22,40 +19,38 @@ param_net: "host"
 param_net_desc: "Shares host networking with container."
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London.", name: "Timezone" }
+  - {env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London.", name: "Timezone"}
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Persistent config files" }
-  - { vol_path: "/var/log:ro", vol_host_path: "/var/log", desc: "Host logs. Mounted as Read Only." }
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Persistent config files"}
+  - {vol_path: "/var/log:ro", vol_host_path: "/var/log", desc: "Host logs. Mounted as Read Only."}
 cap_add_param: true
 cap_add_param_vars:
-  - { cap_add_var: "NET_ADMIN", desc: "Required for fail2ban to be able to modify iptables rules." }
-  - { cap_add_var: "NET_RAW", desc: "Required for fail2ban to be able to bind to any interface & use RAW sockets." }
-
+  - {cap_add_var: "NET_ADMIN", desc: "Required for fail2ban to be able to modify iptables rules."}
+  - {cap_add_var: "NET_RAW", desc: "Required for fail2ban to be able to bind to any interface & use RAW sockets."}
 # optional parameters
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "VERBOSITY", env_value: "-vv", desc: "Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable.", name: "Verbosity", env_options: ["", "-v", "-vv", "-vvv", "-vvvv"] }
+  - {env_var: "VERBOSITY", env_value: "-vv", desc: "Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable.", name: "Verbosity", env_options: ["", "-v", "-vv", "-vvv", "-vvvv"]}
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/remotelogs/airsonic:ro", vol_host_path: "/path/to/airsonic/log", desc: "Optional path to airsonic log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/apache2:ro", vol_host_path: "/path/to/apache2/log", desc: "Optional path to apache2 log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/authelia:ro", vol_host_path: "/path/to/authelia/log", desc: "Optional path to authelia log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/emby:ro", vol_host_path: "/path/to/emby/log", desc: "Optional path to emby log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/filebrowser:ro", vol_host_path: "/path/to/filebrowser/log", desc: "Optional path to filebrowser log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/homeassistant:ro", vol_host_path: "/path/to/homeassistant/log", desc: "Optional path to homeassistant log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/lighttpd:ro", vol_host_path: "/path/to/lighttpd/log", desc: "Optional path to lighttpd log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/nextcloud:ro", vol_host_path: "/path/to/nextcloud/log", desc: "Optional path to nextcloud log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/nginx:ro", vol_host_path: "/path/to/nginx/log", desc: "Optional path to nginx log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/nzbget:ro", vol_host_path: "/path/to/nzbget/log", desc: "Optional path to nzbget log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/overseerr:ro", vol_host_path: "/path/to/overseerr/log", desc: "Optional path to overseerr log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/prowlarr:ro", vol_host_path: "/path/to/prowlarr/log", desc: "Optional path to prowlarr log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/radarr:ro", vol_host_path: "/path/to/radarr/log", desc: "Optional path to radarr log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/sabnzbd:ro", vol_host_path: "/path/to/sabnzbd/log", desc: "Optional path to sabnzbd log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/sonarr:ro", vol_host_path: "/path/to/sonarr/log", desc: "Optional path to sonarr log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/unificontroller:ro", vol_host_path: "/path/to/unificontroller/log", desc: "Optional path to unificontroller log folder. Mounted as Read Only." }
-  - { vol_path: "/remotelogs/vaultwarden:ro", vol_host_path: "/path/to/vaultwarden/log", desc: "Optional path to vaultwarden log folder. Mounted as Read Only." }
-
+  - {vol_path: "/remotelogs/airsonic:ro", vol_host_path: "/path/to/airsonic/log", desc: "Optional path to airsonic log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/apache2:ro", vol_host_path: "/path/to/apache2/log", desc: "Optional path to apache2 log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/authelia:ro", vol_host_path: "/path/to/authelia/log", desc: "Optional path to authelia log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/emby:ro", vol_host_path: "/path/to/emby/log", desc: "Optional path to emby log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/filebrowser:ro", vol_host_path: "/path/to/filebrowser/log", desc: "Optional path to filebrowser log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/homeassistant:ro", vol_host_path: "/path/to/homeassistant/log", desc: "Optional path to homeassistant log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/lighttpd:ro", vol_host_path: "/path/to/lighttpd/log", desc: "Optional path to lighttpd log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/nextcloud:ro", vol_host_path: "/path/to/nextcloud/log", desc: "Optional path to nextcloud log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/nginx:ro", vol_host_path: "/path/to/nginx/log", desc: "Optional path to nginx log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/nzbget:ro", vol_host_path: "/path/to/nzbget/log", desc: "Optional path to nzbget log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/overseerr:ro", vol_host_path: "/path/to/overseerr/log", desc: "Optional path to overseerr log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/prowlarr:ro", vol_host_path: "/path/to/prowlarr/log", desc: "Optional path to prowlarr log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/radarr:ro", vol_host_path: "/path/to/radarr/log", desc: "Optional path to radarr log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/sabnzbd:ro", vol_host_path: "/path/to/sabnzbd/log", desc: "Optional path to sabnzbd log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/sonarr:ro", vol_host_path: "/path/to/sonarr/log", desc: "Optional path to sonarr log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/unificontroller:ro", vol_host_path: "/path/to/unificontroller/log", desc: "Optional path to unificontroller log folder. Mounted as Read Only."}
+  - {vol_path: "/remotelogs/vaultwarden:ro", vol_host_path: "/path/to/vaultwarden/log", desc: "Optional path to vaultwarden log folder. Mounted as Read Only."}
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -77,14 +72,56 @@ app_setup_block: |
   The `/remotelogs` path is designed to act as a parent for all log files you would like fail2ban to be able to use.
   Each log file should be mounted in a subfolder underneath `/remotelogs`, ex:
   - `/remotelogs/nginx/` would mount a folder containing the nginx logs to the container
-
+# init diagram
+init_diagram: |
+  "fail2ban:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-fail2ban-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    init-config -> init-fail2ban-config
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-fail2ban
+    svc-fail2ban -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:3.20"
+  }
+  "fail2ban:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "12.10.24:", desc: "Rebase to Alpine 3.20." }
-  - { date: "05.03.24:", desc: "Rebase to Alpine 3.19." }
-  - { date: "01.06.23:", desc: "Add optional VERBOSITY environment variable, allowing users to set the container log verbosity." }
-  - { date: "25.05.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
-  - { date: "15.12.22:", desc: "Replace unmaintained ssmtp with msmtp."}
-  - { date: "15.12.22:", desc: "Rebase to Alpine 3.17, Add ssmtp and whois packages. Symlink config to allow live reloading."}
-  - { date: "25.08.22:", desc: "Update README to clarify remote log information." }
-  - { date: "09.08.22:", desc: "Initial Release." }
+  - {date: "12.10.24:", desc: "Rebase to Alpine 3.20."}
+  - {date: "05.03.24:", desc: "Rebase to Alpine 3.19."}
+  - {date: "01.06.23:", desc: "Add optional VERBOSITY environment variable, allowing users to set the container log verbosity."}
+  - {date: "25.05.23:", desc: "Rebase to Alpine 3.18, deprecate armhf."}
+  - {date: "15.12.22:", desc: "Replace unmaintained ssmtp with msmtp."}
+  - {date: "15.12.22:", desc: "Rebase to Alpine 3.17, Add ssmtp and whois packages. Symlink config to allow live reloading."}
+  - {date: "25.08.22:", desc: "Update README to clarify remote log information."}
+  - {date: "09.08.22:", desc: "Initial Release."}
