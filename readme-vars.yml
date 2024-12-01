@@ -29,8 +29,8 @@ param_volumes:
   - { vol_path: "/var/log:ro", vol_host_path: "/var/log", desc: "Host logs. Mounted as Read Only." }
 cap_add_param: true
 cap_add_param_vars:
-  - { cap_add_var: "NET_ADMIN" }
-  - { cap_add_var: "NET_RAW" }
+  - { cap_add_var: "NET_ADMIN", desc: "Required for fail2ban to be able to modify iptables rules." }
+  - { cap_add_var: "NET_RAW", desc: "Required for fail2ban to be able to bind to any interface & use RAW sockets." }
 
 # optional parameters
 opt_param_usage_include_env: true
