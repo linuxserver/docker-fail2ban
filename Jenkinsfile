@@ -27,8 +27,8 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/fail2ban'
     PR_DOCKERHUB_IMAGE = 'lspipepr/fail2ban'
     DIST_IMAGE = 'alpine'
-    DIST_TAG = '3.20'
-    DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.20/main/'
+    DIST_TAG = '3.21'
+    DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.21/main/'
     DIST_REPO_PACKAGES = 'fail2ban'
     MULTIARCH='true'
     CI='true'
@@ -73,7 +73,9 @@ pipeline {
                   fi
                 done
               fi
-              docker system prune -f --volumes || : '''
+              docker system prune -f --volumes || :
+              docker image prune -af || :
+           '''
         script{
           env.EXIT_STATUS = ''
           env.LS_RELEASE = sh(
@@ -755,7 +757,8 @@ pipeline {
                   if [[ -n "${containers}" ]]; then
                     docker stop ${containers}
                   fi
-                  docker system prune -af --volumes || :
+                  docker system prune -f --volumes || :
+                  docker image prune -af || :
                '''
           }
         }
@@ -1181,6 +1184,7 @@ EOF
               done
             fi
             docker system prune -f --volumes || :
+            docker image prune -af || :
          '''
       cleanWs()
     }
