@@ -83,7 +83,7 @@ shadow                  4.15.1-r0              apk
 skalibs                 2.14.1.1-r0            apk       
 sqlite-libs             3.45.3-r1              apk       
 ssl_client              1.36.1-r29             apk       
-tzdata                  2025a-r0               apk       
+tzdata                  2025b-r0               apk       
 utmps-libs              0.1.2.2-r1             apk       
 whois                   5.5.23-r0              apk       
 xz-libs                 5.6.2-r0               apk       
