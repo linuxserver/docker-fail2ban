@@ -3,7 +3,7 @@ acl-libs                2.3.2-r1          apk
 alpine-baselayout       3.6.8-r1          apk       
 alpine-baselayout-data  3.6.8-r1          apk       
 alpine-keys             2.5-r0            apk       
-alpine-release          3.21.5-r0         apk       
+alpine-release          3.21.6-r0         apk       
 apk-tools               2.14.6-r3         apk       
 bash                    5.2.37-r0         apk       
 brotli-libs             1.1.0-r2          apk       
@@ -35,9 +35,9 @@ libattr                 2.5.2-r2          apk
 libbsd                  0.12.2-r0         apk       
 libbz2                  1.0.8-r6          apk       
 libcom_err              1.47.1-r1         apk       
-libcrypto3              3.3.5-r0          apk       
+libcrypto3              3.3.6-r0          apk       
 libcurl                 8.14.1-r2         apk       
-libexpat                2.7.3-r0          apk       
+libexpat                2.7.4-r0          apk       
 libffi                  3.4.7-r0          apk       
 libgcc                  14.2.0-r4         apk       
 libgcrypt               1.10.3-r1         apk       
@@ -55,7 +55,7 @@ libnftnl                1.2.8-r0          apk
 libpanelw               6.5_p20241006-r3  apk       
 libproc2                4.0.4-r2          apk       
 libpsl                  0.21.5-r3         apk       
-libssl3                 3.3.5-r0          apk       
+libssl3                 3.3.6-r0          apk       
 libstdc++               14.2.0-r4         apk       
 libunistring            1.2-r0            apk       
 libverto                0.3.2-r2          apk       
